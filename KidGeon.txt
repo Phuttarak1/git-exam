@@ -1,0 +1,52 @@
+import java.util.Scanner;
+import java.io.*;
+public class Main
+{
+	public static void main(String[] args) {
+		String Name =" ",time1 = "",c ;
+		float time2 ,level , sum=0, w[]=new float[50];
+		Scanner scan = new Scanner(System.in);
+		do{
+		    System.out.print("Name  ");
+		    Name = scan.next();
+		    System.out.print("level  ");
+			level = scan.nextFloat();
+		    System.out.print("Time1  ");   		
+			time1 = scan.nextLine(); 
+			time2 = scan.nextFloat();
+			float num=0;
+			if (level==3)	{
+				sum=35;
+				num=sum*time2;
+				w[0]=w[0]+1;
+				w[1]=w[1]+num;
+			}
+			else if (level==2)	{
+				sum=33;
+				num=sum*time2;
+				w[2]=w[2]+1;
+				w[4]=w[4]+num;
+			}
+			else if (level==1)	{
+				sum=30;
+				num=sum*time2;
+				w[3]=w[3]+1;
+				w[5]=w[5]+num;		
+			}
+			System.out.println("Name\tLevel\tTime\tWage\tTotal");      
+			System.out.println(Name+"\t"+level+"\t"+time2+"\t"+sum+"\t"+num);  	
+			System.out.println("======================================================");      
+			System.out.print("Do you want to try again 1=(Yes) 2=(No) = ");
+			c = scan.nextLine();	 
+			w[6]=scan.nextFloat(); 
+			}while (w[6]!=2);
+			
+			System.out.println("Level  1  = "+w[3]+"  People"+"|\ttotal Wage  ="+w[5]);		 
+			System.out.println("===============================================");    
+			System.out.println("Level  2  = "+w[2]+"  People"+"|\ttotal Wage  ="+w[4]);  		 
+			System.out.println("===============================================");   
+			System.out.println("Level  3  = "+w[0]+"  People"+"|\ttotal Wage  ="+w[1]);  
+			System.out.println("===============================================");    
+			System.out.println("total  =  "+(w[0]+w[2]+w[3])+" People  "+"| total Wage = "+(w[5]+w[1]+w[4]));
+		}
+	}
